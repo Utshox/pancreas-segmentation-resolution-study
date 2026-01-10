@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+venv/
+data/
+preprocessed*/
+*.nii.gz
+*.h5
+checkpoints/
+*.log
+.DS_Store
