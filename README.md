@@ -68,14 +68,6 @@ latex_report/
 ---
 
 ## 🎯 How to Use
-
-### For Overleaf
-1. Upload `thesis_report.zip` to Overleaf
-2. Set compiler to **pdfLaTeX**
-3. Compile `main.tex`
-4. Expected output: **~25-page professional report** with embedded figures
-
-### For Sharing with Colleagues
 The report is self-contained:
 - Complete methodology for all 5 phases
 - Tables with all experimental results and job IDs
