@@ -58,7 +58,7 @@ FixMatch uses a hard threshold (only learn if confidence > 0.95). In CT scans, o
 ## 🖼️ Final Visual Proof
 The culmination of our work is visualized below. Our robust Mean Teacher model (Red) trained on only 50% of the data matches the manual ground truth (Green) almost perfectly.
 
-![Final Multi-Case Results]([/stud3/2024/chsu1452/.gemini/antigravity/brain/7f75d1ce-97c8-43a9-9482-6ba96fbbf9cb/vis_combined.png](https://github.com/Utshox/pancreas-segmentation-resolution-study/blob/main/results/plots/vis_combined.png)
+![Final Multi-Case Results](/stud3/2024/chsu1452/.gemini/antigravity/brain/7f75d1ce-97c8-43a9-9482-6ba96fbbf9cb/vis_combined.png](https://github.com/Utshox/pancreas-segmentation-resolution-study/blob/main/results/plots/vis_combined.png)
 
 ## 🎓 Final Conclusion
 1.  **Don't Downsample:** For small organs like the pancreas, 512x512 resolution is non-negotiable.
