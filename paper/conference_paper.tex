@@ -184,8 +184,8 @@ Our Mean Teacher approach (0.83 Dice) significantly outperforms FixMatch and mat
 
 \section{Qualitative Analysis}
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.48\textwidth]{vis_error_combined.png}}
-\caption{Qualitative Results and Error Analysis (Cases 001, 004, 006). Columns from left to right: (1) Original CT Slice, (2) Ground Truth Mask (Green), (3) Mean Teacher Prediction (Red), and (4) Error Analysis Map where \textcolor{green}{Green=True Positive}, \textcolor{red}{Red=False Positive}, and \textcolor{blue}{Blue=False Negative}. This detailed breakdown shows that our method captures the main pancreatic body (Green) with high accuracy, while errors are confined to subtle boundary regions.}
+\centerline{\includegraphics[width=0.48\textwidth]{vis_comparison_combined.png}}
+\caption{Qualitative Comparison (Cases 004, 006). Columns: (1) CT Slice, (2) Ground Truth (Green), (3) \textbf{Mean Teacher (Ours, 50\% Data)} showing accurate segmentation, and (4) \textbf{Supervised Baseline (100\% Data)}. Our semi-supervised method (Col 3) nearly matches the fully supervised upper bound (Col 4), demonstrating high data efficiency.}
 \label{fig:vis}
 \end{figure}
 
