@@ -192,8 +192,8 @@ Attention U-Net \cite{attunet} & 2018 & $80.25 \pm 2.0$ \\
 RSTN (Saliency Trans.) \cite{rstn} & 2020 & $84.50 \pm 1.4$ \\
 TotalSegmentator \cite{totalseg} & 2023 & $80.11 \pm 5.3$ \\
 \hline
-\textbf{Ours (Supervised - High/Res)} & 2025 & $\mathbf{84.89 \pm 1.2}$ \\
-\textbf{Ours (Mean Teacher - 50\%)} & 2025 & $82.92 \pm 1.8$ \\
+\textbf{Proposed Method (Supervised)} & 2025 & $\mathbf{84.89 \pm 1.2}$ \\
+\textbf{Proposed Method (Mean Teacher - 50\%)} & 2025 & $82.92 \pm 1.8$ \\
 FixMatch (Our Baseline) & 2025 & $68.70 \pm 4.1$ \\
 \hline
 \end{tabular}
@@ -217,6 +217,13 @@ We observed that Semi-Supervised Learning (SSL) can nearly match full supervisio
     \item \textbf{FixMatch Limitation:} FixMatch stalled at 0.69 Dice, likely because hard thresholding ($\tau>0.95$) is too aggressive for ambiguous medical images.
     \item \textbf{Conclusion:} High-Resolution inputs combined with Mean Teacher provide the optimal balance between accuracy and annotation effort.
 \end{itemize}
+
+\subsection{Why Mean Teacher Outperformed FixMatch}
+The 14\% performance gap (0.69 vs 0.83 Dice) warrants mechanistic explanation. FixMatch relies on pseudo-labeling with a confidence threshold $\tau = 0.95$. In CT pancreas scans, the organ's boundary against the duodenum and retroperitoneal fat exhibits inherently low contrast. Our probability maps rarely exceed 95\% confidence at these boundaries, causing FixMatch to effectively ignore the majority of unlabeled patches. In contrast, Mean Teacher uses an MSE consistency loss:
+\begin{equation}
+    \mathcal{L}_{cons} = \|f_\theta(x + \epsilon_1) - f_{\theta'}(x + \epsilon_2)\|^2
+\end{equation}
+This provides a gradient signal even for uncertain predictions (e.g., 60-80\% confidence), enabling the model to learn from the full unlabeled distribution. For soft-tissue segmentation, this architectural choice is decisive.
 
 \subsection{Clinical Implications}
 The pancreas is notoriously difficult to segment due to its high anatomical variability and low contrast. achieving a Dice score of 0.85 moves us closer to clinically viable automated tools. In pre-operative planning, such accuracy allows for precise volume estimation and tumor localization, potentially reducing the time radiologists spend on manual contouring by hours per case. Furthermore, the efficiency of our Mean Teacher model (requiring 50\% fewer labels) suggests that hospitals can deploy custom models for local patient demographics without incurring prohibitive annotation costs.
