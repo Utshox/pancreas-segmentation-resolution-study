@@ -37,7 +37,7 @@ kursat.komurcu@mif.vu.lt}
 \maketitle
 
 \begin{abstract}
-Precise segmentation of the pancreas and pancreatic tumors from CT scans is very important for diagnosis but is a difficult task because of high anatomical variability and limited annotations. Conventional methods, such as the 3D U-Net, typically involve down sampling to fit the memory of the GPU. This study proposes a High-Resolution Patch-Based Framework that preserves native resolution, achieving the Dice score of 0.849 on the NIH Pancreas-CT dataset, outperforming recent methods including RSTN (0.845) and TotalSegmentator (0.801). To address annotation scarcity, we integrate this framework with Semi-Supervised Learning (SSL). Our Mean Teacher approach yields 0.83 Dice using only 50\% of the labeled data, recovering 98\% of the full-supervision performance. This effectively bridges the gap between accuracy and annotation costs, whereas other SSL methods like FixMatch struggle with the ambiguous boundaries typical of soft-tissue segmentation. The code is available at \href{https://github.com/utshox/pancreas-segmentation-resolution-study}{Github}.
+Precise segmentation of the pancreas and pancreatic tumors from CT scans is very important for diagnosis but is a difficult task because of high anatomical variability and limited annotations. Conventional methods, such as the 3D U-Net, typically involve down sampling to fit the memory of the GPU. This study proposes a High-Resolution Patch-Based Framework that preserves native resolution, achieving the Dice score of 0.849 on the NIH Pancreas-CT dataset, outperforming recent methods including RSTN (0.845) and TotalSegmentator (0.801). To address annotation scarcity, we integrate this framework with Semi-Supervised Learning (SSL). Our Mean Teacher approach yields 0.83 Dice using only 50\% of the labeled data, recovering 98\% of the full-supervision performance. This effectively bridges the gap between accuracy and annotation costs, whereas other SSL methods like FixMatch struggle with the ambiguous boundaries typical of soft-tissue segmentation. The code is available at \href{https://github.com/Utshox/pancreas-segmentation-resolution-study}{Github}.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -66,6 +66,8 @@ The contributions of this work are threefold:
     \item A rigorous comparison between Mean Teacher and FixMatch is conducted using the NIH Pancreas dataset.
     \item A new supervised benchmark of 84.9\% Dice is established without using complex multi-stage pipelines.
 \end{itemize}
+
+To support reproducibility, all code, pre-trained models, and instructions are made publicly available at \href{https://github.com/Utshox/pancreas-segmentation-resolution-study}{https://github.com/Utshox/pancreas-segmentation-resolution-study}.
 
 The paper is organized as follows: Section II reviews related work. Section III details the proposed methodology. Section IV and Section V  presents the experimental results and discussion. Finally, Section VI concludes the study.
 
