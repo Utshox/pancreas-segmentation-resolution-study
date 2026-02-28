@@ -13,6 +13,7 @@ This repository contains the code and resources for the study "High-Resolution P
     *   `inference/`: Sliding window inference scripts.
     *   `visualization/`: Scripts to generate qualitative plots.
 *   `paper/`: Conference paper (LaTeX) and visualizations.
+    *   `conference_paper.tex`: **The final IEEE-formatted conference paper**.
     *   `walkthrough.md`: **Detailed Project Report & Architecture Explanation**.
 
 ## 🚀 How to Run
